@@ -5,7 +5,7 @@ import com.modernjava.lambda.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ShoppingBasketTest {
+public class PracticingTestsOnDifferentObjects {
     Donor donor = new Donor();
     EventsPromoter promoter = new EventsPromoter();
     FizzBuzz fb = new FizzBuzz();
