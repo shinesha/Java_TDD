@@ -1,4 +1,4 @@
-package com.modernjava.lambda;
+package com.TDD.practice;
 
 public class Main {
 

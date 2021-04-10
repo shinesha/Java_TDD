@@ -1,9 +1,9 @@
 package test;
 
+import com.TDD.practice.*;
 import com.modernjava.lambda.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import junit.framework.Assert;
 
 public class ShoppingBasketTest {
     Donor donor = new Donor();
