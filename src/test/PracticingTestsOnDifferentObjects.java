@@ -1,16 +1,16 @@
 package test;
 
 import com.TDD.practice.*;
-import com.modernjava.lambda.*;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class PracticingTestsOnDifferentObjects {
     Donor donor = new Donor();
     EventsPromoter promoter = new EventsPromoter();
     FizzBuzz fb = new FizzBuzz();
-    Calculator calculator= new Calculator();
-    Calculator calculator1= new Calculator();
+    Calculator calculator = new Calculator();
+    Calculator calculator1 = new Calculator();
 
     @Test
     public void totalOfEmptyBasket() {
@@ -19,11 +19,8 @@ public class PracticingTestsOnDifferentObjects {
 
     }
 
-
     @Test
     public void testGiftAidTaxExtra() {
-
-
         assertEquals(0.25, donor.calulateTaxExtra(1.0, 20.0), 0.0);
         assertEquals(0.5, donor.calulateTaxExtra(2.0, 20.0), 0.0);
 
@@ -39,9 +36,10 @@ public class PracticingTestsOnDifferentObjects {
         assertEquals(5.0, promoter.getSupplement("running"), 0.0);
         assertEquals(3.0, promoter.getSupplement("swimming"), 0.0);
         assertEquals(0.0, promoter.getSupplement(""), 0.0);
-}
+    }
+
     @Test
-    public void isItDivisibleByThreeOrFive(){
+    public void isItDivisibleByThreeOrFive() {
         assertEquals("Fizz", fb.getShoutOut(3));
         assertEquals("Fizz", fb.getShoutOut(30));
         assertEquals("Fizz", fb.getShoutOut(33));
@@ -53,18 +51,25 @@ public class PracticingTestsOnDifferentObjects {
     }
 
     @Test
-    public void IntCalulator(){
-     assertEquals(8.0, calculator.add(4.0, 4.0), 0.0);
-     assertEquals(8.0, calculator.add(4, 4.0), 0.0);
-     assertEquals(8.011, calculator.add(4.011, 4.0), 0.0);
+    public void IntCalulator() {
+        assertEquals(8.0, calculator.add(4.0, 4.0), 0.0);
+        assertEquals(8.0, calculator.add(4, 4.0), 0.0);
+        assertEquals(8.011, calculator.add(4.011, 4.0), 0.0);
     }
 
     @Test
-    public void StringCalulator(){
+    public void StringCalulator() {
         assertEquals(0, calculator1.add("", ""));
-        assertEquals(8, calculator1.add("4", "4"));
+        assertEquals(1, calculator1.add("1", ""));
+        assertEquals(3, calculator1.add("1", "", "2"));
+        assertEquals(5, calculator1.add("1", "2", "2"));
+        assertEquals(3, calculator1.add("1,2"));
+        assertEquals(15, calculator1.add("1\n2,3", "9"));
+        assertEquals(28, calculator1.add("14", "14"));
+        assertEquals(16, calculator1.add("1\n2,3", "10"));
+
+
 
     }
-
 
 }
