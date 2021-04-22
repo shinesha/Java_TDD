@@ -7,23 +7,28 @@ public class Calculator {
     }
 
     public int add(String... args) {
-        int add = 0;
-        int val = 0;
+        try {
+            int add = 0;
+            int val = 0;
 
 
-        for (int i = 0; i < args.length; i++) {
-            for (int j = 0; j < args[i].length(); j++) {
-                if (!args[i].contains(",")) {
-                    add += Integer.parseInt(String.valueOf(args[i]));
-                    break;
+            for (int i = 0; i < args.length; i++) {
+                for (int j = 0; j < args[i].length(); j++) {
+                    if ((!args[i].contains(",")) && (!args[i].contains(";"))) {
+                        add += Integer.parseInt(String.valueOf(args[i]));
+                        break;
 
-                } else if (args[i].contains(",") && Character.isDigit(args[i].charAt(j)) == true) {
-                    val = Integer.parseInt(String.valueOf(args[i].charAt(j)));
-                    add += val;
+                    } else if (Character.isDigit(args[i].charAt(j)) == true) {
+                        val = Integer.parseInt(String.valueOf(args[i].charAt(j)));
+                        add += val;
+                    }
                 }
             }
+            return add;
+        } catch (Exception e) {
+            e.getMessage();
         }
-        return add;
+        return 0;
     }
 }
 
